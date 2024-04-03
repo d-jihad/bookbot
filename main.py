@@ -13,7 +13,6 @@ def gen_report(file: str) -> (int, dict[str, int]):
     return len(words), char_count
 
 
-
 def write_report(filepath: str, words_count: int, char_count: dict[str, int]):
     print(f'--- Begin report of {filepath} ---')
     print(f'{words_count} words found in the document\n')
@@ -25,9 +24,8 @@ def write_report(filepath: str, words_count: int, char_count: dict[str, int]):
 
 
 def main(argv: list[str]) -> int:
-
     filepath = argv[0]
-    
+
     with open(filepath) as f:
         file_content = f.read()
         w_count, c_count = gen_report(file_content)
@@ -38,4 +36,5 @@ def main(argv: list[str]) -> int:
 
 if __name__ == '__main__':
     import sys
+
     sys.exit(main(sys.argv[1:]))
